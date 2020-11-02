@@ -12,7 +12,8 @@ import javafx.scene.shape.Line;
 import javafx.scene.text.Text;
 
 /**
- *
+ * BTView class
+ * For the graphical
  * @author Mikael
  */
 public class BTView extends Pane {

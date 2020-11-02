@@ -6,7 +6,7 @@
 package grafiskavltree;
 
 /**
- *
+ * AVL Tree class
  * @author Mikael
  * @param <E>
  */
@@ -46,7 +46,7 @@ public class AVLTree<E extends Comparable<E>> extends BST<E> {
         } else {
             balancePath(e);
         } // Balance from e to the root if necessary 
-        
+
         updateSize();
         return true; // e is inserted 
     }
@@ -274,21 +274,21 @@ public class AVLTree<E extends Comparable<E>> extends BST<E> {
     }
     /**
      * Return the kth smallest element in the Tree, by calling on the recursive find(k, root) method
-     * 
+     *
      * @param k the kth smallest element you want to find
-     * @return 
-     * @see #find(int k, AVLTreeNode<E> root)
+     * @return element E
+     * @see #find(int k, AVLTreeNode<E>)
      */
     public E find(int k) {
         if(k < 1 || k > size)
             return null;
-        else 
+        else
             return find(k, (AVLTreeNode<E>) root); //recursive call to find(k, root)
     }
-    
+
     /**
      * Returns the kth smallest element in the Tree with the specified root
-     * 
+     *
      * @param k the kth smallest element you want to find
      * @param root the root node of the search
      * @return the kth smallest element in the Tree with the specified root
@@ -296,11 +296,11 @@ public class AVLTree<E extends Comparable<E>> extends BST<E> {
     public E find(int k, AVLTreeNode<E> root) {
         if (root == null || k > root.size)
                 return null;
-        
+
         // let A be to the left of root, and B be to the right of root
         AVLTreeNode<E> A = (AVLTreeNode<E>) root.left;
         AVLTreeNode<E> B = (AVLTreeNode<E>) root.right;
-        
+
         if(A == null && k==1)
             return root.element;
         else if(A == null && k==2)
@@ -312,7 +312,7 @@ public class AVLTree<E extends Comparable<E>> extends BST<E> {
         else
             return find(k - A.size - 1, B);
     }
-    
+
     /**
      * Updates the size of the Tree by calling on the recursive updateSize(root) method
      */
@@ -322,11 +322,11 @@ public class AVLTree<E extends Comparable<E>> extends BST<E> {
 
     /**
      * Updates the size of the Tree, and returns the root size
-     * 
+     *
      * @param root the specified root node
      * @return the updated size of root, or 0 if the root is equal to null
      */
-    private int updateSize(AVLTreeNode<E> root) {        
+    private int updateSize(AVLTreeNode<E> root) {
         if (root == null) { return 0; }
         else {
           root.size = 1 + updateSize((AVLTreeNode<E>) root.left) +

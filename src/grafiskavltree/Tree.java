@@ -8,7 +8,7 @@ package grafiskavltree;
 import java.util.Collection;
 
 /**
- *
+ * Interface for Tree
  * @author Mikael
  * @param <E>
  */
@@ -58,37 +58,31 @@ public interface Tree<E> extends Collection<E> {
     
     @Override
     public default boolean containsAll(Collection<?> c) {
-        // Left as an exercise 
         return false;
     }
     
     @Override
     public default boolean addAll(Collection<? extends E> c) {
-        // Left as an exercise
         return false;
     }
     
     @Override
     public default boolean removeAll(Collection<?> c) {
-        // Left as an exercise
         return false;
     }
     
     @Override
     public default boolean retainAll(Collection<?> c) {
-        // Left as an exercise
         return false;
     }
     
     @Override
     public default Object[] toArray() {
-        // Left as an exercise
         return null;
     }
     
     @Override
     public default <T> T[] toArray(T[] array) {
-        // Left as an exercise
         return null;
     }
 }

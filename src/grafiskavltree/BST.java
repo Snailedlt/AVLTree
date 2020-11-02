@@ -153,7 +153,7 @@ public class BST<E  extends Comparable<E>> implements Tree<E> {
     /**
      * Returns a path from the root leading to the specified element
      * @param e
-     * @return 
+     * @return Tree node path
      */
     public java.util.ArrayList<TreeNode<E>> path(E e) {
         java.util.ArrayList<TreeNode<E>> list

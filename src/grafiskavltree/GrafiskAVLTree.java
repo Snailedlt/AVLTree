@@ -18,7 +18,7 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 
 /**
- *
+ * GraviskAvlTree class
  * @author Mikael
  */
 public class GrafiskAVLTree extends Application {
